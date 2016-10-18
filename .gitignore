@@ -149,3 +149,4 @@ pyvenv.cfg
 pip-selfcheck.json
 
 .idea/
+allTweets.json
