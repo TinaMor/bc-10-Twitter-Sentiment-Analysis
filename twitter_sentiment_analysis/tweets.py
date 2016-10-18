@@ -4,6 +4,8 @@ from twitter_sentiment_analysis import authentication
 
 # TODO: Wrap this in function -- init_api()
 api = ''
+
+
 def init_api():
     """
     Initiliases the Tweetpy api object
@@ -11,14 +13,23 @@ def init_api():
     global api
     api = authentication.authenticate()
 
+
 tweets_list = []
+
+
+def get_tweets_from_previous_weeks(weeks=4):
+    """
+    Retrieves tweets from the the previous number of weeks specified.
+    Default = 4 weeks = One last month
+    :return:
+    """
 
 
 def get_last_200_tweets():
     """
     Gets the latest 200 tweets if available, add them to tweet_list
     """
-    for status in tweepy.Cursor(api.user_timeline).items(2):
+    for status in tweepy.Cursor(api.user_timeline).items(200):
         tweets_list.append(status._json)
 
 
