@@ -3,10 +3,12 @@ import json
 from twitter_sentiment_analysis import authentication
 
 # TODO: Wrap this in function -- init_api()
+api = ''
 def init_api():
     """
     Initiliases the Tweetpy api object
     """
+    global api
     api = authentication.authenticate()
 
 tweets_list = []
@@ -33,4 +35,5 @@ def load_tweets_json_file():
     Load the JSON file with tweets, decode the data to Python types
     """
     with open('allTweets.json', 'r') as f:
+        global tweets_list
         tweets_list = json.load(f)
