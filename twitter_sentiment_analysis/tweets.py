@@ -23,3 +23,10 @@ def save_tweets_json_file():
     with open('allTweets.json', 'w') as f:
         json.dump(tweets_list, f)
 
+
+def load_tweets_json_file():
+    """
+    Load the JSON file with tweets, decode the data to Python types
+    """
+    with open('allTweets.json', 'r') as f:
+        tweets_list = json.load(f)
