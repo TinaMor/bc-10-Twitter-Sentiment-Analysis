@@ -1,4 +1,7 @@
 import re
+from collections import Counter
+from twitter_sentiment_analysis import tweets
+from twitter_sentiment_analysis import utilities
 
 # Thanks to https://marcobonzanini.com/2015/03/09/mining-twitter-data-with-python-part-2/
 # Slight modification --- not using emotions for now
@@ -25,3 +28,18 @@ def tokenize(text):
     :return: a list of string that make up the text
     """
     return tokens_re.findall(text)
+
+
+# Count the frequency of words in tweets
+def get_word_frequency(tweets_list):
+    """
+    Counts the frequency of words (appropriate ones)
+    :return: a Counter object with word frequency
+    """
+    tweets_freq_counter = Counter()
+    stop_words = utilities.get_stop_words()
+
+    for status in tweets_list:
+        tweet_texts = [text for text in tokenize(status['text']) if text not in stop_words]
+        tweets_freq_counter.update(tweet_texts)
+    return tweets_freq_counter
