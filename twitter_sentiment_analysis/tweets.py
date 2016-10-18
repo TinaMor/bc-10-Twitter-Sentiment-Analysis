@@ -1,5 +1,6 @@
 import tweepy
 import json
+from datetime import datetime, timedelta
 from twitter_sentiment_analysis import authentication
 
 # TODO: Wrap this in function -- init_api()
@@ -17,12 +18,26 @@ def init_api():
 tweets_list = []
 
 
-def get_tweets_from_previous_weeks(weeks=4):
+def get_tweets_from_previous_weeks(wks=4):
     """
     Retrieves tweets from the the previous number of weeks specified.
     Default = 4 weeks = One last month
-    :return:
+    :return: a list of Status objects
     """
+
+    tweet_dates = []
+    #load tweets if need be
+    if len(tweets_list) == 0:
+        load_last_200_tweets()
+    else:
+        tweet_dates = [datetime.strptime(status['created_at'], '%a %b %d %H:%M:%S %z %Y') for status in tweets_list]
+        latest_date = tweets_list[0]
+        diff = timedelta(weeks=wks)
+        look_for_date = latest_date - diff
+
+        # check if look_for_date is available
+
+
 
 
 def load_last_200_tweets():

@@ -71,9 +71,11 @@ def get_emotion_analysis(text):
     """
     return alchemy_language.emotion(text=text)
 
+
 def get_overall_sentiment(text):
     """
-    Detects the
+    Detects the overall sentiment of the text
     :param text:
-    :return:
+    :return: dict with overall sentiment
     """
+    return alchemy_language.sentiment(text=text)
