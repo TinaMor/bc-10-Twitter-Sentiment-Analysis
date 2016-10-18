@@ -25,7 +25,7 @@ def get_tweets_from_previous_weeks(weeks=4):
     """
 
 
-def get_last_200_tweets():
+def load_last_200_tweets():
     """
     Gets the latest 200 tweets if available, add them to tweet_list
     """
