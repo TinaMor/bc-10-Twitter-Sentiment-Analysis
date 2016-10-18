@@ -3,7 +3,11 @@ import json
 from twitter_sentiment_analysis import authentication
 
 # TODO: Wrap this in function -- init_api()
-api = authentication.authenticate()
+def init_api():
+    """
+    Initiliases the Tweetpy api object
+    """
+    api = authentication.authenticate()
 
 tweets_list = []
 
