@@ -58,13 +58,22 @@ def get_tweet_texts(tweet_list):
 
     return relevant_tweet_text
 
+
 # Initialise the Alchemy API
-alchemy_language = AlchemyLanguageV1(api_key = "e479d8cc96cefa59286f7871e6b011b734e5131a")
+alchemy_language = AlchemyLanguageV1(api_key="e479d8cc96cefa59286f7871e6b011b734e5131a")
+
+
 def get_emotion_analysis(text):
     """
     Detects the emotions implied in the text using Alchemy API
     :param text:
     :return: dict of emotions
     """
+    return alchemy_language.emotion(text=text)
 
-
+def get_overall_sentiment(text):
+    """
+    Detects the
+    :param text:
+    :return:
+    """
