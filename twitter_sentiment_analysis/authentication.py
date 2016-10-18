@@ -9,6 +9,7 @@ def authenticate():
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 
     # get authorisation url
+    # TODO : Make the UI better -- colors, bold and stuff
     try:
         auth_url = auth.get_authorization_url(signin_with_twitter=True)
         print("\nPlease go to ", auth_url, " to authorise this app to access your account.\n")
