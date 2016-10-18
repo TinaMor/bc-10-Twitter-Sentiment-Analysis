@@ -1,6 +1,7 @@
 import re
 from collections import Counter
 from twitter_sentiment_analysis import tweets
+from watson_developer_cloud import AlchemyLanguageV1
 from twitter_sentiment_analysis import utilities
 
 # Thanks to https://marcobonzanini.com/2015/03/09/mining-twitter-data-with-python-part-2/
@@ -43,3 +44,27 @@ def get_word_frequency(tweets_list):
         tweet_texts = [text for text in tokenize(status['text']) if text not in stop_words]
         tweets_freq_counter.update(tweet_texts)
     return tweets_freq_counter
+
+
+def get_tweet_texts(tweet_list):
+    """
+    Builds and returns a single text with the tweets passed
+    :param tweet_list:
+    :return: a single string with all tweets
+    """
+    relevant_tweet_text = ''
+    for text in tweet_list:
+        relevant_tweet_text += ' ' + text['text']
+
+    return relevant_tweet_text
+
+# Initialise the Alchemy API
+alchemy_language = AlchemyLanguageV1(api_key = "e479d8cc96cefa59286f7871e6b011b734e5131a")
+def get_emotion_analysis(text):
+    """
+    Detects the emotions implied in the text using Alchemy API
+    :param text:
+    :return: dict of emotions
+    """
+
+
