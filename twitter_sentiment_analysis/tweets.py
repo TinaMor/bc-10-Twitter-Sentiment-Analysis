@@ -45,6 +45,37 @@ def get_tweets_from_previous_weeks(wks=4):
         # check if look_for_date is available
 
 
+def load_next_n_tweets(num):
+    """
+    Loads num tweets to the list of tweets.
+    NOTE: The max num allowed is 3200. If num is greater than 3200, num is taken to be 3200
+    :param num:
+    """
+    num = 3200 if num > 3200 else num
+
+    # fetch this directly
+    if num < 200:
+        for status in tweepy.Cursor(api.user_timeline).items(num):
+            tweets_list.append(status._json)
+    else:
+        iterations, remaining = divmod(num, 200)
+
+        # id of the oldest tweet
+        oldest_id = tweets_list[-1]['id'] - 1
+
+        # loop through, add the next 200 tweets
+        for i in range(iterations):
+            new_tweets = api.user_timeline(count=200, max_id=oldest_id)
+            for t in new_tweets:
+                tweets_list.append(t._json)
+            oldest_id = tweets_list[-1]['id'] - 1
+
+        # add the remaining tweets
+        r_tweets = api.user_timeline(count=remaining, max_id=tweets_list[-1]['id'] - 1)
+        for i in r_tweets:
+            tweets_list.append(i._json)
+
+
 def load_latest_200_tweets():
     """
     Gets the latest 200 tweets if available, add them to tweet_list
