@@ -18,7 +18,7 @@ def init_api():
             break
         except tweepy.TweepError as e:
             if '401' in e.reason:
-                print "The verification code you entered appears to incorrect.\nWe'll do this once more."
+                print ("The verification code you entered appears to incorrect.\nWe'll do this once more.")
                 # TODO: Check for more error codes
 
 
