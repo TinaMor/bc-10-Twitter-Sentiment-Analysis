@@ -35,7 +35,7 @@ def get_tweets_from_previous_weeks(wks=4):
     tweet_dates = []
     # load tweets if need be
     if len(tweets_list) == 0:
-        load_last_200_tweets()
+        load_latest_200_tweets()
     else:
         tweet_dates = [datetime.strptime(status['created_at'], '%a %b %d %H:%M:%S %z %Y') for status in tweets_list]
         latest_date = tweets_list[0]
@@ -45,7 +45,7 @@ def get_tweets_from_previous_weeks(wks=4):
         # check if look_for_date is available
 
 
-def load_last_200_tweets():
+def load_latest_200_tweets():
     """
     Gets the latest 200 tweets if available, add them to tweet_list
     """
