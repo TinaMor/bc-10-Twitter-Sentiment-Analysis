@@ -41,7 +41,7 @@ def get_word_frequency(tweets_list):
     stop_words = utilities.get_stop_words()
 
     for status in tweets_list:
-        tweet_texts = [text for text in tokenize(status['text']) if text not in stop_words]
+        tweet_texts = [text for text in tokenize(status['text']) if text.lower() not in stop_words]
         tweets_freq_counter.update(tweet_texts)
     return tweets_freq_counter
 
