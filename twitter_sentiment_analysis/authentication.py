@@ -12,20 +12,20 @@ def authenticate():
     # TODO : Make the UI better -- colors, bold and stuff
     try:
         auth_url = auth.get_authorization_url(signin_with_twitter=True)
-        print("\nPlease go to ", auth_url, " to authorise this app to access your account.\n")
+        print "\nPlease go to", auth_url, "to authorise this app to access your account.\n"
 
         # check that the user inputs a sane input
         while True:
             try:
-                verifier = input("Enter PIN provided: ")
+                verifier = raw_input("Enter PIN provided: ")
                 int_value = int(verifier)
                 break
             except ValueError:
-                print(verifier, " doesn't seem like a proper verification code. Please check provided URL again.\n")
+                print verifier, " doesn't seem like a proper verification code. Please check provided URL again.\n"
                 continue
 
     except tweepy.TweepError:
-        print("Cannot generate authorisation URL")
+        print "Cannot generate authorisation URL"
 
     # request access token
     # Check if access token can obtained. If not raise an Exception.
