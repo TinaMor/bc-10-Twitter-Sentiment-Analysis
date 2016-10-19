@@ -26,7 +26,7 @@ def get_tweets_from_previous_weeks(wks=4):
     """
 
     tweet_dates = []
-    #load tweets if need be
+    # load tweets if need be
     if len(tweets_list) == 0:
         load_last_200_tweets()
     else:
@@ -36,8 +36,6 @@ def get_tweets_from_previous_weeks(wks=4):
         look_for_date = latest_date - diff
 
         # check if look_for_date is available
-
-
 
 
 def load_last_200_tweets():
