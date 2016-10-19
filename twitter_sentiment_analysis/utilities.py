@@ -23,7 +23,7 @@ def get_stop_words():
 
     stop_words = set(nltk_stop_words)
     # Update with additional stop words
-    stop_words.update(['RT', 'via', '…'])
+    stop_words.update(['rt', 'via', '…'])
     stop_words.update([i for i in string.punctuation])
 
     return stop_words
