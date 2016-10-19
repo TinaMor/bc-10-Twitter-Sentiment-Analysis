@@ -21,14 +21,19 @@ def authenticate():
                 int_value = int(verifier)
                 break
             except ValueError:
-                print(verifier, " doesn't seem like a proper verification code. Please check again.\n")
+                print(verifier, " doesn't seem like a proper verification code. Please check provided URL again.\n")
                 continue
 
     except tweepy.TweepError:
         print("Cannot generate authorisation URL")
+
     # request access token
-    try:
-        auth.get_access_token(verifier)
-        return tweepy.API(auth)
-    except tweepy.TweepError:
-        raise tweepy.TweepError
+    # Check if access token can obtained. If not raise an Exception.
+    # Another request has to be initiated by the init_api function.
+    auth.get_access_token(verifier)
+    return tweepy.API(auth)
+    # try:
+    #     auth.get_access_token(verifier)
+    #     return tweepy.API(auth)
+    # except tweepy.TweepError:
+    #     raise
