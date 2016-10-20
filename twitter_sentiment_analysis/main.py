@@ -1,4 +1,5 @@
 from twitter_sentiment_analysis.utilities import bcolors
+from twitter_sentiment_analysis import tweets
 
 
 def get_header():
@@ -26,12 +27,17 @@ def get_info_warning():
     """
     note = "\tTHIS APPLICATION WILL NOT POST ANY DATA TO YOUR TIMELINE."
     res = bcolors.BOLD + top + "\n"
-    res += warn + bcolors.FAIL+ "\n" + note + bcolors.ENDC + '\n' + bcolors.BOLD + top + "\n" + bcolors.ENDC
+    res += warn + bcolors.FAIL + "\n" + note + bcolors.ENDC + '\n' + bcolors.BOLD + top + "\n" + bcolors.ENDC
     return res
+
 
 def main_loop():
     print(get_header())
     print(get_info_warning())
 
+    # Keep prompting for correct code
+    incorrect_code = False
+    while not incorrect_code:
+        tweets.init_api()
 
-
+main_loop()
