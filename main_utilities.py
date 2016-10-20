@@ -137,7 +137,17 @@ def main_loop():
         if choice in ('n', 'NO', 'No', 'no'):
             # clear screen
             subprocess.call('clear', shell=True)
-            print(bcolors.HEADER, "Goodbye", bcolors.ENDC)
+            bye =  """
+
+ _____                 _  ______
+|  __ \               | | | ___
+| |  \/ ___   ___   __| | | |_/ /_   _  ___
+| | __ / _ \ / _ \ / _` | | ___ \ | | |/ _
+| |_\ \ (_) | (_) | (_| | | |_/ / |_| |  __/
+ \____/\___/ \___/ \__,_| \____/ \__, |\___|
+                                  __/ |
+                                 |___/       """
+            print(bcolors.BOLD, bye, bcolors.ENDC)
             print(bcolors.OKGREEN, "\nFind me on Twitter at @kamau_michael", bcolors.ENDC)
             break
         elif choice in ('Yes', 'yes', 'y', 'YES'):
