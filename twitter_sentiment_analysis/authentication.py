@@ -1,4 +1,5 @@
 import tweepy
+from twitter_sentiment_analysis.utilities import bcolors
 
 consumer_key = 'hTM8QyARGUpNS96bBr31tkggf'
 consumer_secret = 'UHW3FRTwrNESX57NNLwE4I4s3DDcLpr9aYPphDDEadJcBa7LvS'
@@ -12,7 +13,8 @@ def authenticate():
     # TODO : Make the UI better -- colors, bold and stuff
     try:
         auth_url = auth.get_authorization_url(signin_with_twitter=True)
-        print("\nPlease go to", auth_url, "to authorise this app to access your account.\n")
+        print(bcolors.BOLD, "\nPlease go to",bcolors.ENDC, bcolors.UNDERLINE,  auth_url, bcolors.ENDC,  bcolors.BOLD,
+              "\nto authorise this app to access your account.\n", bcolors.ENDC)
 
         # check that the user inputs a sane input
         while True:
@@ -21,7 +23,8 @@ def authenticate():
                 int_value = int(verifier)
                 break
             except ValueError:
-                print(verifier, " doesn't seem like a proper verification code. Please check provided URL again.\n")
+                print(bcolors.FAIL, verifier, "doesn't seem like a proper verification code. Please check provided code"
+                                              " again.\n", bcolors.ENDC)
                 continue
 
     except tweepy.TweepError:
