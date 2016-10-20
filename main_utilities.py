@@ -91,7 +91,7 @@ def main_loop():
     print(get_header())
 
     print(bcolors.HEADER, "\tSentiment Analysis -- Emotions", bcolors.ENDC)
-    print(bcolors.BOLD, "\tType\t%Detected", bcolors.ENDC)
+    print(bcolors.BOLD, "\t\tType\t%Detected", bcolors.ENDC)
     for e in emotions['docEmotions'].items():
         data = bcolors.OKBLUE + "\t{: >10}\t" + bcolors.ENDC + bcolors.OKGREEN + "{:.2%}" + bcolors.ENDC
         print(data.format(e[0].capitalize(), float(e[1])))
@@ -105,7 +105,7 @@ def main_loop():
     print(bcolors.BOLD, "+---------------------------------------------------------------+")
     print(bcolors.BOLD, "For better insight, these are the top 10 words you tweeted:",bcolors.ENDC)
     print(bcolors.HEADER, "Ten Most Tweeted Words", bcolors.ENDC)
-    print(bcolors.BOLD, "\tWord\tFrequency", bcolors.ENDC)
+    print(bcolors.BOLD, "\t\tWord\tFrequency", bcolors.ENDC)
     for t in words_freq_counter.most_common(10):
         data = bcolors.OKBLUE + '\t' + "{: >15}" + bcolors.ENDC + '\t' + bcolors.OKGREEN + "{:>5}" + bcolors.ENDC
         print (data.format(t[0], t[1]))
