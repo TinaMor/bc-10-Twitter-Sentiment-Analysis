@@ -40,4 +40,3 @@ def main_loop():
     while not incorrect_code:
         tweets.init_api()
 
-main_loop()
