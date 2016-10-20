@@ -2,7 +2,7 @@
 
 ## Introduction
 
-![sentiment.png](sentiment definition)
+![sentiment definition](sentiment.png)
 
 This a console application that helps you get a glimpse of sentiments that can deduced from your twitter status updates.
 
@@ -18,8 +18,8 @@ The scope to of this application is constrained to doing two things:
 * Deducing emotions expressed in the tweets. By emotions, I mean feeling such as anger, fear, joy and so on. Ordinarily, one expects a mixture of emotions to be expressed. Thus, you will be presented by a list of five different emotions with a percentage score for each.
 * Overall sentiment -- whether your tweets express positive view, negative view or neutral view. Again, a percentage score for each sentiment is also displayed.
 
-NOTE: This analysis is done using artificial intelligence by the awesome folks at IBM Alchemy. 
-THE RESULTS DISPLAYED BY THIS APPLICATION SHOULD NEVER BE USED AS A BASIS FOR ANY DECISIONS; ANY SENTIMENTS DISPLAYED ARE PURELY FOR ENTERTAINMENT VALUE AND PROGRAMMING PLEASURE.
+NOTE: This analysis is done using artificial intelligence by the awesome folks at [IBM Alchemy API](http://www.alchemyapi.com/). 
+**THE RESULTS DISPLAYED BY THIS APPLICATION SHOULD NEVER BE USED AS A BASIS FOR ANY PERSONAL OR BUSINESS DECISIONS; ANY SENTIMENTS DISPLAYED ARE PURELY FOR ENTERTAINMENT VALUE AND PROGRAMMING PLEASURE.**
 
 ## Installation and Setup
 
@@ -28,7 +28,8 @@ THE RESULTS DISPLAYED BY THIS APPLICATION SHOULD NEVER BE USED AS A BASIS FOR AN
 
 To get up and running:
 * Clone this repo using the url:
-<add url here>
+
+    ```https://github.com/michaelkamau/bc-10-Twitter-Sentiment-Analysis```
 
 * Navigate to the Twitter Sentiment Analysis folder and install dependencies:
 
@@ -49,7 +50,7 @@ To get up and running:
 _THAT'S it._
 
 You will be greeted by this screen 
-![screen.png](main screen)
+![main screen](screen.png)
 
 
 ## Why am I doing this?
