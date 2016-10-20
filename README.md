@@ -28,26 +28,27 @@ NOTE: This analysis is done using artificial intelligence by the awesome folks a
 
 To get up and running:
 
-* Clone this repo using the url:
+Clone this repo using the url:
 
-      ```https://github.com/michaelkamau/bc-10-Twitter-Sentiment-Analysis```
+     ```https://github.com/michaelkamau/bc-10-Twitter-Sentiment-Analysis```
       
-* Navigate to the Twitter Sentiment Analysis folder and install dependencies:
+Navigate to the Twitter Sentiment Analysis folder and install dependencies:
 
     ```pip install -r requirements```
 
-    NOTE: For operating systems where Python 3 is not default, you might have to to do this:
+   NOTE: For operating systems where Python 3 is not default, you might have to to do this:
     
-    ```pip3 install -r requirements```
+       ```pip3 install -r requirements```
     
-* To run the application:
+To run the application:
     
     ```python3 main.py```
 
-    If Python3 is default in your setup:
-    
+If Python3 is default in your setup:
+
     ```python main.py```
     
+
 _THAT'S it._
 
 
