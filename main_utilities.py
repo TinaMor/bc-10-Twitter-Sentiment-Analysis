@@ -61,15 +61,26 @@ def main_loop():
     get_personal_info()
 
     # Ask user for tweets to retrieve
-    print("+------------------------------------------------------------------------+")
-    print("  The application is ready.")
-    print("  How many tweets do you want to retrieve to analyse? Enter number below:")
+    print(bcolors.BOLD, "+------------------------------------------------------------------------+", bcolors.ENDC)
+    print(bcolors.BOLD, "\tThe application is ready.", bcolors.ENDC)
+    print(bcolors.WARNING, "\tHow many tweets do you want to retrieve to analyse? Enter number below:", bcolors.ENDC)
     # TODO : Should check if tweets are already saved.
     # TODO : Do error checking here
-    num_tweets = int(input("\tEnter number of tweets (Default = 200): "))
+    num_tweets = input(bcolors.OKGREEN + "\tEnter number of tweets (Default = 200): ")
+    while True:
+        if num_tweets == "":
+            num_of_tweets = 200
+            break
+        else:
+            try:
+                num_of_tweets = int(num_tweets)
+                break
+            except ValueError:
+                print(bcolors.FAIL, "You entered an invalid number of tweets.")
+                num_tweets = input(bcolors.OKGREEN + "\tEnter number of tweets (Default = 200): ")
 
     # Load the tweets to tweets_list
-    tweets.load_next_n_tweets(num_tweets)
+    tweets.load_next_n_tweets(num_of_tweets)
 
     # save to json file
     tweets.save_tweets_json_file()
