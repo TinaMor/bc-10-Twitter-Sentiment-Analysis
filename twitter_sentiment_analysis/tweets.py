@@ -109,3 +109,11 @@ def load_tweets_json_file():
     with open('allTweets.json', 'r') as f:
         global tweets_list
         tweets_list = json.load(f)
+
+def get_user_info():
+    """
+    Returns a dict with user profile information
+    :return: a dict with twitter info
+    """
+    user = api.me()
+    return user._json
