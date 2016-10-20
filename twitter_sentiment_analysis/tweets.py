@@ -1,4 +1,5 @@
 import json
+import time
 import subprocess
 from datetime import datetime, timedelta
 
@@ -25,7 +26,7 @@ def init_api():
                 print(bcolors.FAIL, "The verification code you entered appears to incorrect."
                                     "\nWe'll do this once more.", bcolors.ENDC)
                 # clear screen. Print header only
-
+                time.sleep(2)
                 subprocess.call('clear', shell=True)
                 print(main_utilities.get_header())
                 # TODO: Check for more error codes
