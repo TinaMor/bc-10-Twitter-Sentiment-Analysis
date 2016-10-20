@@ -1,25 +1,33 @@
-import tweepy
 import json
+import subprocess
 from datetime import datetime, timedelta
-from twitter_sentiment_analysis import authentication
 
-# TODO: Wrap this in function -- init_api()
-api = ''
+import tweepy
+
+import main
+from twitter_sentiment_analysis import authentication
+from twitter_sentiment_analysis.utilities import bcolors
 
 
 def init_api():
     """
     Initiliazes the tweepy api object
     """
-    global api
     while True:
         try:
-            api = authentication.authenticate()
+            t_api = authentication.authenticate()
             break
         except tweepy.TweepError as e:
             if '401' in e.reason:
-                print ("The verification code you entered appears to incorrect.\nWe'll do this once more.")
+                print(bcolors.FAIL, "The verification code you entered appears to incorrect."
+                                    "\nWe'll do this once more.", bcolors.ENDC)
+                # clear screen. Print header only
+                subprocess.call('clear', shell=True)
+                print(main.get_header())
                 # TODO: Check for more error codes
+    return t_api
+
+api = init_api()
 
 
 tweets_list = []
