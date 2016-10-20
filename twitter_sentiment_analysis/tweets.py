@@ -69,7 +69,9 @@ def load_next_n_tweets(num):
             tweets_list.append(status._json)
     else:
         iterations, remaining = divmod(num, 200)
-
+        # fetch a single tweet first
+        for status in tweepy.Cursor(api.user_timeline).items(1):
+            tweets_list.append(status._json)
         # id of the oldest tweet
         oldest_id = tweets_list[-1]['id'] - 1
 
