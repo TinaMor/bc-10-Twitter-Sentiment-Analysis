@@ -2,7 +2,7 @@ import json
 import time
 import subprocess
 from datetime import datetime, timedelta
-
+from tqdm import tqdm
 import tweepy
 
 import main_utilities
@@ -65,7 +65,7 @@ def load_next_n_tweets(num):
 
     # fetch this directly
     if num < 200:
-        for status in tweepy.Cursor(api.user_timeline).items(num):
+        for status in tqdm(tweepy.Cursor(api.user_timeline).items(num),desc='Fetching Tweets', unit=' Tweets', bar_format='percentage'):
             tweets_list.append(status._json)
     else:
         iterations, remaining = divmod(num, 200)
@@ -76,7 +76,7 @@ def load_next_n_tweets(num):
         oldest_id = tweets_list[-1]['id'] - 1
 
         # loop through, add the next 200 tweets
-        for i in range(iterations):
+        for i in tqdm(range(iterations), desc= 'Fetching Tweets', unit=' Tweets'):
             new_tweets = api.user_timeline(count=200, max_id=oldest_id)
             for t in new_tweets:
                 tweets_list.append(t._json)
