@@ -38,13 +38,13 @@ Navigate to the Twitter Sentiment Analysis folder and install dependencies:
 
 If the pip3 is not installed, please install it from your Package Manager. It is generally called 
       
-        python-pip
+        python3-pip
 
 To run the application:
     
         python3 main.py
 
-If Python3 is default in your setup:
+If **Python3 is default in your setup:
 
         python main.py
     
@@ -54,6 +54,15 @@ _THAT'S it!_
 
 You will be greeted by this screen 
 ![main screen](screen.png)
+
+### ToDo List
+
+They say data is the new oil. A lot more can be done to enhance the functionality of this application. Below is a list of feature I intend to add to the application:
+
+* Give user more control over which sentiments to analyse
+* Add ability to analyse many accounts at the same time; and compare sentiment results.
+
+If you have any suggestions, comments, requests, complains or gifts, feel free to (mailto:tokamau@gmail.com)[contact me]. 
 
 ## Why am I doing this?
 
