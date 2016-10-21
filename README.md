@@ -44,7 +44,7 @@ To run the application:
     
         python3 main.py
 
-If **Python3 is default in your setup:
+If **Python3 is default in your setup**:
 
         python main.py
     
