@@ -15,7 +15,7 @@ Google dictionary defines 'sentiment' as
 > a feeling or emotion.
 
 The scope to of this application is constrained to doing two things:
-* Deducing emotions expressed in the tweets. By emotions, I mean feeling such as anger, fear, joy and so on. Ordinarily, one expects a mixture of emotions to be expressed. Thus, you will be presented by a list of five different emotions with a percentage score for each.
+* Deducing emotions expressed in the tweets. By emotions, I mean feelings such as anger, fear, joy and so on. Ordinarily, one expects a mixture of emotions to be expressed. Thus, you will be presented by a list of five different emotions with a percentage score for each.
 * Overall sentiment -- whether your tweets express positive view, negative view or neutral view. Again, a percentage score for each sentiment is also displayed.
 
 NOTE: This analysis is done using artificial intelligence by the awesome folks at [IBM Alchemy API](http://www.alchemyapi.com/). 
@@ -61,8 +61,9 @@ They say data is the new oil. A lot more can be done to enhance the functionalit
 
 * Give user more control over which sentiments to analyse
 * Add ability to analyse many accounts at the same time; and compare sentiment results.
+* Create a Python 2 port
 
-If you have any suggestions, comments, requests, complains or gifts, feel free to (mailto:tokamau@gmail.com)[contact me]. 
+If you have any suggestions, comments, requests, complains or gifts, feel free to [mailto:tokamau@gmail.com](contact me). 
 
 ## Why am I doing this?
 
