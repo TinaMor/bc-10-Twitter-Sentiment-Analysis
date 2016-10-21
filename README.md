@@ -63,7 +63,7 @@ They say data is the new oil. A lot more can be done to enhance the functionalit
 * Add ability to analyse many accounts at the same time; and compare sentiment results.
 * Create a Python 2 port
 
-If you have any suggestions, comments, requests, complains or gifts, feel free to [mailto:tokamau@gmail.com](contact me). 
+If you have any suggestions, comments, requests, complains or gifts, feel free to [contact me](mailto:tokamau@gmail.com) 
 
 ## Why am I doing this?
 
